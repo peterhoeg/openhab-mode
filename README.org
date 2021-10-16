@@ -1,0 +1,5 @@
+* openhab-modes
+
+Assorted modes for openHAB files.
+
+These are typically xtend based.
