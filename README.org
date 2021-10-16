@@ -1,5 +1,38 @@
 * openhab-modes
 
-Assorted modes for openHAB files.
+This is a collection of major modes for working with various [[https://openhab.org][openHAB]] files.
 
-These are typically xtend based.
+The primary objective is to get syntax highlighting and indentation working
+(both as-you-write and formatting of the entire buffer) and while *far* from
+complete, it's absolutely useable for rules files now.
+
+Support for =.items= and =.things= files will probably come last as I don't
+write those by hand anyway - they are all generated.
+
+Modes:
+- [[xbase-mode]]
+- [[openhab-item-mode]]
+- [[openhab-rule-mode]]
+- [[openhab-sitemap-mode]]
+- [[openhab-thing-mode]]
+
+* xbase-mode
+
+=rules= files are based on [[https://www.eclipse.org/xtend/][Xtend]], so included here is =xtend-mode.el= which is
+used as the mode from which =openhab-rules-mode= derives.
+
+* openhab-item-mode
+
+Not implemented yet.
+
+* openhab-rule-mode
+
+The basic mode for editing =.rules= files.
+
+* openhab-sitemap-mode
+
+Not implemented yet.
+
+* openhab-thing-mode
+
+Not implemented yet.
