@@ -78,14 +78,15 @@
         (save-excursion
           (while not-indented
             (forward-line -1)
-            (if (looking-at "^[ \t]*end") ; Rule 3
-                (setq cur-indent (current-indentation)
-                      not-indented nil)
-              (if (looking-at "^[ \t]*\\(then\\|when\\)") ; Rule 4
-                  (setq cur-indent (+ (current-indentation) standard-indent)
-                        not-indented nil)
-                (if (bobp)              ; Rule 5
-                    (setq not-indented nil)))))))
+            (cond
+             ((looking-at "^[ \t]*end")  ; Rule 3
+              (setq cur-indent (current-indentation)
+                    not-indented nil))
+             ((looking-at "^[ \t]*\\(then\\|when\\)") ; Rule 4
+              (setq cur-indent (+ (current-indentation) standard-indent)
+                    not-indented nil))
+             ((bobp)                    ; Rule 5
+              (setq not-indented nil))))))
       (if cur-indent
           (indent-line-to cur-indent)
         (indent-line-to 0))))) ; If we didn't see an indentation hint, then allow no indentation
