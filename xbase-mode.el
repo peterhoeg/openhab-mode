@@ -24,8 +24,8 @@
 
 (defvar xbase-mode-hook nil)
 
-(define-derived-mode xbase-mode c-mode "xbase"
-  "Major mode base for various openhab modes"
+(define-derived-mode xbase-mode java-mode "xbase"
+  "Major mode base for various openHAB modes."
   (run-hooks 'xbase-mode-hook))
 
 (provide 'xbase-mode)
