@@ -31,12 +31,13 @@
   (setq-local comment-start "//"
               comment-end ""
               font-lock-defaults `(((,(rx "//" (one-or-more not-newline) eol) . 'font-lock-comment-face)
+                                    (,(rx (or "ON" "OFF")) . font-lock-constant-face)
                                     (,(rx type-words spaces (group item-name)) . (1 'font-lock-function-name-face))
                                     (,(rx bol type-words) . 'font-lock-type-face)
                                     (,(rx "(" (group (one-or-more not-newline)) ")") . (1 'font-lock-function-name-face))
                                     (,(rx (group (one-or-more (any alpha))) "=") . (1 'font-lock-keyword-face))
                                     (,(rx "<" (group (one-or-more (any alpha))) ">") . (1 'font-lock-builtin-face))
-                                    ;; 'font-lock-variable-name-face 'font-lock-constant-face
+                                    ;; 'font-lock-variable-name-face
                                     ))
               imenu-generic-expression `((nil ,(rx bol (group type-words space item-name space "\"" (one-or-more (any alnum space)) "\"")) 1))
               imenu-sort-function #'imenu--sort-by-name
