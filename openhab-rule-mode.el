@@ -1,9 +1,8 @@
-;;; package --- openHAB rules
+;;; openhab-rule-mode.el --- openHAB rules -*- lexical-binding: t; -*-
 ;;;
 ;;; Commentary:
 ;;;
 ;;; Code:
-(require 'xbase-mode)
 
 (defvar openhab-rule-mode-hook nil)
 
@@ -92,7 +91,7 @@
         (indent-line-to 0))))) ; If we didn't see an indentation hint, then allow no indentation
 
 ;;;###autoload
-(define-derived-mode openhab-rule-mode xbase-mode "openhab rule"
+(define-derived-mode openhab-rule-mode prog-mode "openhab rule"
   "Major mode for editing openHAB rules."
   (setq-local
    comment-start "//"
@@ -101,7 +100,7 @@
    ;; indent-line-function 'openhab-rule-mode-indent-line
    )
   (use-local-map openhab-rule-mode-map)
-  (run-hooks 'xbase-mode-hook)
+  (run-hooks 'openhab-mode-hook)
   (run-hooks 'openhab-rule-mode-hook))
 
 ;;;###autoload
