@@ -27,12 +27,14 @@
   (rx-define spaces (one-or-more space))
   (rx-define item-name (one-or-more (any alnum "_")))
   (rx-define sitemap-name (one-or-more (any alnum "_")))
-  (rx-define type-words (or "sitemap" "Default" "Frame" "Image" "Selection" "Slider" "Switch" "Text" "Video"))
+  (rx-define type-words (or "sitemap" "Default" "Frame" "Image" "Selection" "Setpoint" "Slider" "Switch" "Text" "Video"))
 
   (setq-local font-lock-defaults `(((,(rx "//" (one-or-more not-newline) eol) . 'font-lock-comment-face)
                                     (,(rx (optional spaces) type-words spaces (group sitemap-name)) . (1 'font-lock-function-name-face))
+                                    (,(rx (optional spaces) "item=" (group item-name)) . (1 'font-lock-variable-name-face))
                                     (,(rx bol (optional spaces) type-words) . 'font-lock-type-face)
                                     (,(rx (group (one-or-more (any alpha))) "=") . (1 'font-lock-keyword-face))
+                                    (,(rx (one-or-more digit)) . font-lock-constant-face)
                                     ;; 'font-lock-variable-name-face
                                     ))
               imenu-generic-expression `((nil ,(rx bol (group type-words space sitemap-name space "\"" (one-or-more (any alnum space)) "\"")) 1))))
