@@ -24,7 +24,7 @@
 (defvar openhab-mode-hook nil)
 
 (require 'openhab-item-mode)
-;; (require 'openhab-rule-mode)
+(require 'openhab-rule-mode)
 (require 'openhab-sitemap-mode)
 (require 'openhab-thing-mode)
 
@@ -37,13 +37,13 @@
               imenu-sort-function #'imenu--sort-by-name))
 
 ;;;###autoload
-(add-to-list 'auto-mode-alist '("\\.items\\'" . openhab-item-mode))
+(add-to-list 'auto-mode-alist `(,(rx ".items" eos) . openhab-item-mode))
 ;;;###autoload
-(add-to-list 'auto-mode-alist '("\\.rules\\'" . openhab-rule-mode))
+(add-to-list 'auto-mode-alist `(,(rx ".rules" eos) . openhab-rule-mode))
 ;;;###autoload
-(add-to-list 'auto-mode-alist '("\\.sitemaps\\'" . openhab-sitemap-mode))
+(add-to-list 'auto-mode-alist `(,(rx ".sitemap" (optional "s") eos) . openhab-sitemap-mode))
 ;;;###autoload
-(add-to-list 'auto-mode-alist '("\\.things\\'" . openhab-thing-mode))
+(add-to-list 'auto-mode-alist `(,(rx ".things" eos) . openhab-thing-mode))
 
 ;; :mode ("\\.\\(items\\|persist\\|sitemap\\|things\\)\\'" . java-mode)
 
