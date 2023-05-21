@@ -25,12 +25,23 @@
 
 (require 'openhab-item-mode)
 ;; (require 'openhab-rule-mode)
+(require 'openhab-sitemap-mode)
 (require 'openhab-thing-mode)
+
+;;;###autoload
+(define-derived-mode openhab-mode prog-mode "openHAB base mode"
+  "Base mode for openHAB files."
+
+  (setq-local comment-start "//"
+              comment-end ""
+              imenu-sort-function #'imenu--sort-by-name))
 
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.items\\'" . openhab-item-mode))
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.rules\\'" . openhab-rule-mode))
+;;;###autoload
+(add-to-list 'auto-mode-alist '("\\.sitemaps\\'" . openhab-sitemap-mode))
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.things\\'" . openhab-thing-mode))
 

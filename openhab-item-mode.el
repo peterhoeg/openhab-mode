@@ -21,16 +21,14 @@
 (require 'imenu)
 
 ;;;###autoload
-(define-derived-mode openhab-item-mode prog-mode "openHAB item"
+(define-derived-mode openhab-item-mode openhab-mode "openHAB item"
   "Major mode for editing openHAB item files."
 
   (rx-define spaces (one-or-more space))
   (rx-define item-name (one-or-more (any alnum "_")))
   (rx-define type-words (or "Contact" "DateTime" "Dimmer" "Group" "Image" "Location" "Number" "Number:Angle" "Number:Dimensionless" "Number:Humidity" "Number:Length" "Number:Speed" "Number:Temperature" "Player" "String" "Switch"))
 
-  (setq-local comment-start "//"
-              comment-end ""
-              font-lock-defaults `(((,(rx "//" (one-or-more not-newline) eol) . 'font-lock-comment-face)
+  (setq-local font-lock-defaults `(((,(rx "//" (one-or-more not-newline) eol) . 'font-lock-comment-face)
                                     (,(rx (or "ON" "OFF")) . font-lock-constant-face)
                                     (,(rx type-words spaces (group item-name)) . (1 'font-lock-function-name-face))
                                     (,(rx bol type-words) . 'font-lock-type-face)
@@ -39,13 +37,7 @@
                                     (,(rx "<" (group (one-or-more (any alpha))) ">") . (1 'font-lock-builtin-face))
                                     ;; 'font-lock-variable-name-face
                                     ))
-              imenu-generic-expression `((nil ,(rx bol (group type-words space item-name space "\"" (one-or-more (any alnum space)) "\"")) 1))
-              imenu-sort-function #'imenu--sort-by-name
-              imenu-max-item-length nil)
-
-  (add-hook 'prometheus-data-mode-hook
-            (lambda ()
-              (display-line-numbers-mode))))
+              imenu-generic-expression `((nil ,(rx bol (group type-words space item-name space "\"" (one-or-more (any alnum space)) "\"")) 1))))
 
 (provide 'openhab-item-mode)
 ;;; openhab-item-mode.el ends here
