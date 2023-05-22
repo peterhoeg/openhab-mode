@@ -1,7 +1,20 @@
 ;;; openhab-rule-mode.el --- openHAB rules -*- lexical-binding: t; -*-
-;;;
+;;
+;; Copyright (C) 2023 Peter Hoeg
+;;
+;; Author: Peter Hoeg <peter@hoeg.com>
+;; Version: 0.0.1
+;; Created: 2023
+;; Keywords: languages
+;; Homepage: https://github.com/peterhoeg/openhab-mode
+;; SPDX-License-Identifier: GPL-3.0-or-later
+;;
+;; This file is not part of GNU Emacs.
+;;
 ;;; Commentary:
-;;;
+;;
+;; Support for openHAB rules written using the openHAB DSL.
+;;
 ;;; Code:
 
 (defvar openhab-rule-mode-hook nil)

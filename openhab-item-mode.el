@@ -3,22 +3,19 @@
 ;; Copyright (C) 2023 Peter Hoeg
 ;;
 ;; Author: Peter Hoeg <peter@hoeg.com>
-;; Maintainer: Peter Hoeg <peter@hoeg.com>
-;; Created: May 20, 2023
-;; Modified: May 20, 2023
 ;; Version: 0.0.1
+;; Created: 2023
 ;; Keywords: languages
-;; Homepage: https://github.com/peter/openhab-mode
+;; Homepage: https://github.com/peterhoeg/openhab-mode
+;; SPDX-License-Identifier: GPL-3.0-or-later
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
 ;;; Commentary:
 ;;
-;;
+;; Support for openHAB items.
 ;;
 ;;; Code:
-
-(require 'imenu)
 
 ;;;###autoload
 (define-derived-mode openhab-item-mode openhab-mode "openHAB item"

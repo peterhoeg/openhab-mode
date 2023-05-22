@@ -1,19 +1,16 @@
-;;; openhab-mode.el --- base mode for various openhab modes
+;;; openhab-mode.el --- openHAB mode -*- lexical-binding: t; -*-
 
-;; Copyright © 2021, by Peter Hoeg
-
+;; Copyright (C) 2021, by Peter Hoeg
+;;
 ;; Author: Peter Hoeg (peter@hoeg.com)
 ;; Version: 1.0.0
 ;; Created: 2017
 ;; Keywords: languages
 ;; Homepage: https://hoeg.com
-;; Package-Requires: ((emacs "24.3"))
+;; SPDX-License-Identifier: GPL-3.0-or-later
+;; Package-Requires: ((emacs "27.1"))
 
 ;; This file is not part of GNU Emacs.
-
-;;; License:
-;;
-;; SPDX-License-Identifier: GPL-3.0-or-later
 
 ;;; Commentary:
 ;;
@@ -21,7 +18,8 @@
 
 ;;; Code:
 
-(defvar openhab-mode-hook nil)
+(require 'imenu)
+(require 'rx)
 
 (require 'openhab-item-mode)
 (require 'openhab-persistence-mode)
@@ -40,15 +38,13 @@
 ;;;###autoload
 (add-to-list 'auto-mode-alist `(,(rx ".items" eos) . openhab-item-mode))
 ;;;###autoload
-(add-to-list 'auto-mode-alist `(,(rx ".persistence" eos) . openhab-persistence-mode))
+(add-to-list 'auto-mode-alist `(,(rx ".persist" eos) . openhab-persistence-mode))
 ;;;###autoload
 (add-to-list 'auto-mode-alist `(,(rx ".rules" eos) . openhab-rule-mode))
 ;;;###autoload
 (add-to-list 'auto-mode-alist `(,(rx ".sitemap" (optional "s") eos) . openhab-sitemap-mode))
 ;;;###autoload
 (add-to-list 'auto-mode-alist `(,(rx ".things" eos) . openhab-thing-mode))
-
-;; :mode ("\\.\\(items\\|persist\\|sitemap\\|things\\)\\'" . java-mode)
 
 (provide 'openhab-mode)
 
