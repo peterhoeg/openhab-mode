@@ -21,12 +21,6 @@
 (require 'imenu)
 (require 'rx)
 
-(require 'openhab-item-mode)
-(require 'openhab-persistence-mode)
-(require 'openhab-rule-mode)
-(require 'openhab-sitemap-mode)
-(require 'openhab-thing-mode)
-
 ;;;###autoload
 (define-derived-mode openhab-mode prog-mode "openHAB base mode"
   "Base mode for openHAB files."

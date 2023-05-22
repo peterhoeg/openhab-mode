@@ -17,6 +17,8 @@
 ;;
 ;;; Code:
 
+(require 'openhab-mode)
+
 ;;;###autoload
 (define-derived-mode openhab-item-mode openhab-mode "openHAB item"
   "Major mode for editing openHAB item files."

@@ -17,6 +17,8 @@
 ;;
 ;;; Code:
 
+(require 'openhab-mode)
+
 ;;;###autoload
 (define-derived-mode openhab-persistence-mode openhab-mode "openHAB sitemap"
   "Major mode for editing openHAB sitemap files."

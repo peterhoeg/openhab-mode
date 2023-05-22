@@ -17,7 +17,7 @@
 ;;
 ;;; Code:
 
-(defvar openhab-rule-mode-hook nil)
+(require 'openhab-mode)
 
 (defvar openhab-rule-mode-map
   (let ((map (make-sparse-keymap)))
@@ -116,9 +116,5 @@
   (run-hooks 'openhab-mode-hook)
   (run-hooks 'openhab-rule-mode-hook))
 
-;;;###autoload
-(add-to-list 'auto-mode-alist '("\\.rules\\'" . openhab-rule-mode))
-
 (provide 'openhab-rule-mode)
-
 ;;; openhab-rule-mode.el ends here

@@ -17,6 +17,8 @@
 ;;
 ;;; Code:
 
+(require 'openhab-mode)
+
 ;;;###autoload
 (define-derived-mode openhab-thing-mode openhab-mode "openHAB thing"
   "Major mode for editing openHAB thing files."
