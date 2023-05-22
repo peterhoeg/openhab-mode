@@ -2,37 +2,45 @@
 
 This is a collection of major modes for working with various [[https://openhab.org][openHAB]] files.
 
-The primary objective is to get syntax highlighting and indentation working
-(both as-you-write and formatting of the entire buffer) and while *far* from
-complete, it's absolutely useable for rules files now.
-
-Support for =.items= and =.things= files will probably come last as I don't
-write those by hand anyway - they are all generated.
+The primary objective is to get syntax highlighting and indentation working (both as-you-write and
+formatting of the entire buffer) and while *far* from complete, it's absolutely usable for editing
+rules files as well as viewing the others.
 
 Modes:
-- [[xbase-mode]]
+- [[openhab-mode]]
 - [[openhab-item-mode]]
+- [[openhab-persistence-mode]]
 - [[openhab-rule-mode]]
 - [[openhab-sitemap-mode]]
 - [[openhab-thing-mode]]
 
-* xbase-mode
+** Why is the editing experience so poor?
 
-=rules= files are based on [[https://www.eclipse.org/xtend/][Xtend]], so included here is =xtend-mode.el= which is
-used as the mode from which =openhab-rules-mode= derives.
+Because I don't actually *edit* any of these files as they are all generated - I only view them.
 
-* openhab-item-mode
+That being said, if someone would like to add better support for editing (indentation comes to
+mind), then please do open a PR!
 
-Not implemented yet.
+** openhab-mode
 
-* openhab-rule-mode
+Base mode from which the others inherit.
 
-The basic mode for editing =.rules= files.
+** openhab-item-mode
 
-* openhab-sitemap-mode
+Support for =.items= files.
 
-Not implemented yet.
+** openhab-persistence-mode
 
-* openhab-thing-mode
+Support for =.persistence= files.
 
-Not implemented yet.
+** openhab-rule-mode
+
+=rules= files are based on [[https://www.eclipse.org/xtend/][Xtend]], so they are technically a real programming languages. I don't myself write rules using the openHAB DSL as openHAB now supports jruby rules.
+
+** openhab-sitemap-mode
+
+Support for =.sitemap= files.
+
+** openhab-thing-mode
+
+Support for =.things= files.

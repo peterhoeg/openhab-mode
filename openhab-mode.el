@@ -24,6 +24,7 @@
 (defvar openhab-mode-hook nil)
 
 (require 'openhab-item-mode)
+(require 'openhab-persistence-mode)
 (require 'openhab-rule-mode)
 (require 'openhab-sitemap-mode)
 (require 'openhab-thing-mode)
@@ -38,6 +39,8 @@
 
 ;;;###autoload
 (add-to-list 'auto-mode-alist `(,(rx ".items" eos) . openhab-item-mode))
+;;;###autoload
+(add-to-list 'auto-mode-alist `(,(rx ".persistence" eos) . openhab-persistence-mode))
 ;;;###autoload
 (add-to-list 'auto-mode-alist `(,(rx ".rules" eos) . openhab-rule-mode))
 ;;;###autoload
