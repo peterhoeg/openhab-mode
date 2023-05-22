@@ -31,7 +31,7 @@
                                     (,(rx (or "default" "strategy")) . 'font-lock-builtin-face)
                                     (,(rx bol (optional spaces) type-words) . 'font-lock-type-face)
                                     (,(rx (optional spaces) (group rule-name) spaces ":") . (1 'font-lock-builtin-face))
-                                    ))
+                                    (,(rx (one-or-more digit)) . font-lock-constant-face)))
               imenu-generic-expression `((nil ,(rx bol (group type-words)) 1))))
 
 (provide 'openhab-persistence-mode)

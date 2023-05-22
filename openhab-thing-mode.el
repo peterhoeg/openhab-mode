@@ -36,8 +36,7 @@
                                     (,(rx type-words) . 'font-lock-type-face)
                                     (,(rx (optional spaces) (group variable-name) "=") . (1 'font-lock-variable-name-face))
                                     (,(rx (or "Channels" "Type")) . 'font-lock-builtin-face)
-                                    (,(rx (one-or-more digit)) . font-lock-constant-face)
-                                    ))
+                                    (,(rx (one-or-more digit)) . font-lock-constant-face)))
               imenu-generic-expression `(("Thing"  ,(rx bol "Thing"  spaces (group thing-name spaces (optional thing-name spaces) "\"" (one-or-more desc) "\"")) 1)
                                          ("Bridge" ,(rx bol "Bridge" spaces (group thing-name spaces (optional thing-name spaces) "\"" (one-or-more desc) "\"")) 1))))
 
