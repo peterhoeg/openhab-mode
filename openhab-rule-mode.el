@@ -56,7 +56,7 @@
     (,(regexp-opt openhab-rule-constants 'words) . font-lock-constant-face)
     (,(regexp-opt openhab-rule-functions 'words) . font-lock-function-name-face)
     (,(regexp-opt openhab-rule-types     'words) . font-lock-type-face))
-  "openHAB rules syntax coloring.")
+  "Font-locking for openHAB rules.")
 
 (defvar openhab-rule-mode-syntax-table
   (let ((st (make-syntax-table)))
@@ -66,12 +66,12 @@
     st)
   "Syntax table for `openhab-rule-mode'.")
 
-;;; Rules - these are not actually correct.
-;;; 1. If we are at the beginning of the buffer, indent to column 0.
-;;; 2. If we are currently at an end line, then de-indent relative to the previous line.
-;;; 3. If we first see an end line before our current line, then we should indent our current line to the same indentation as the end line.
-;;; 4. If we first see a “start line” like rule, then we need to increase our indentation relative to that start line.
-;;; 5. If none of the above apply, then do not indent at all.
+;; Rules - these are not actually correct.
+;; 1. If we are at the beginning of the buffer, indent to column 0.
+;; 2. If we are currently at an end line, then de-indent relative to the previous line.
+;; 3. If we first see an end line before our current line, then we should indent our current line to the same indentation as the end line.
+;; 4. If we first see a “start line” like rule, then we need to increase our indentation relative to that start line.
+;; 5. If none of the above apply, then do not indent at all.
 
 (defun openhab-rule-mode-indent-line ()
   "Indent current line as an openHAB rule."

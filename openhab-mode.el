@@ -1,4 +1,4 @@
-;;; openhab-mode.el --- openHAB mode -*- lexical-binding: t; -*-
+;;; openhab-mode.el --- Support openHAB files -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2021, by Peter Hoeg
 ;;
@@ -14,7 +14,7 @@
 
 ;;; Commentary:
 ;;
-;; Base mode for various openHAB modes in Emacs
+;; Support for openHAB files.
 
 ;;; Code:
 
