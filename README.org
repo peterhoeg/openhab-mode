@@ -1,3 +1,5 @@
+[[https://melpa.org/#/openhab-mode][https://melpa.org/packages/openhab-mode-badge.svg]]
+
 * openhab-modes
 
 This is a collection of major modes for working with various [[https://openhab.org][openHAB]] files.
