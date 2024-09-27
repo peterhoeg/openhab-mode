@@ -28,7 +28,7 @@
   (rx-define type-words (or "Contact" "DateTime" "Dimmer" "Group" "Image" "Location" "Number" "Number:Angle" "Number:Dimensionless" "Number:Humidity" "Number:Length" "Number:Speed" "Number:Temperature" "Player" "String" "Switch"))
 
   (setq-local font-lock-defaults `(((,(rx "//" (one-or-more not-newline) eol) . 'font-lock-comment-face)
-                                    (,(rx (or "ON" "OFF")) . font-lock-constant-face)
+                                    (,(rx (or "ON" "OFF")) . 'font-lock-constant-face)
                                     (,(rx type-words spaces (group item-name)) . (1 'font-lock-function-name-face))
                                     (,(rx bol type-words) . 'font-lock-type-face)
                                     (,(rx "(" (group (one-or-more not-newline)) ")") . (1 'font-lock-function-name-face))
